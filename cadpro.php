@@ -1,4 +1,6 @@
 <?php  
+session_start();
+
 $descricao = $_POST['nome'];
 $eminimo = $_POST['eminimo'];
 $emaximo = $_POST['emaximo'];

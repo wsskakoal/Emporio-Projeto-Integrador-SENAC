@@ -1,74 +1,58 @@
-<?php 
-// Verificador de sessão 
-require "verifica.php"; 
- 
-// Conexão com o banco de dados 
-require "comum.php"; 
- 
-// Imprime mensagem de boas vindas 
-echo "<font face=\"Verdana\" size=2>Bem-Vindo " . $_SESSION["login"] . "!<BR>\n"; 
- 
-// Verifica e imprime quantidade de notícias no nome do usuário 
-$SQL = "SELECT id 
-FROM lougar
-WHERE id = " . $_SESSION["login"]; 
-$result_id = mysql_query($SQL) or die(mysql_error()); 
-$total = mysql_num_rows($result_id); 
- 
-if($total) 
-{ 
-    echo "Há um total de " . $total . " notícia(s) de sua autoria!\n"; 
-} 
-else
-{ 
-    echo "Não há nenhuma notícia de sua autoria!\n"; 
-} 
- 
-/** 
-* Verifica se usuário tem permissão para postar novas notícias. 
-* Caso positivo, imprime link para postagem de notícias 
-*/
-if($_SESSION["permissao"] == "S") 
-{ 
-    echo " | <a href=\"nova.php\">Postar nova notícia</a>\n"; 
-} 
- 
-// Imprime link de logout 
-echo " | <a href=\"sair.php\">Sair do Sistema</a>"; 
- 
-echo "<br><br>\n"; 
- 
-/** 
-* Imprime as notícias 
-*/
-$SQL = "SELECT id, titulo, data 
-FROM aut_noticias 
-ORDER BY data DESC"; 
-$result_id = mysql_query($SQL) or die(mysql_error()); 
-$total = mysql_num_rows($result_id); 
- 
-if($total) 
-{ 
-// Abre tabela HTML 
-    echo "<table border=1 cellpadding=3 cellspacing=0>\n"; 
-    echo "<tr><th>Id</th><th>Título</th><th>Data</th></tr>\n"; 
- 
-    // Efetua o loop no banco de dados 
-    while($dados = mysql_fetch_array($result_id)) 
-    { 
-        echo "<tr><td>" . $dados["id"] . "</td><td>";
-        echo " <a href=\"ver_noticia.php?id=" . $dados["id"] . "\">"
-        . stripslashes($dados["titulo"]) . ";
-        echo "</a></td>"; 
-        echo "<td>" . date("d/m/Y à\s H:i:s", $dados["data"]).
-         "</td></tr>\n"; 
-    } 
- 
-    // Fecha tabela 
-    echo "</table>\n"; 
-} 
-else
-{ 
-    echo "<B>Nenhuma notícia cadastrada!</B>\n"; 
-} 
-    ?>
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Empório - Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+
+<body>
+    <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h1 class="title has-text-grey">Sistema de Login</h1>
+                    <h3 class="title has-text-grey"><a href="https://animesonlinebr.site/" target="_blank">Empório do Seu João</a></h3>
+                    <?php
+                        if(isset($_SESSION['nao_autenticado'])):
+                    ?>
+
+                    <div class="notification is-danger">
+                      <p>ERRO: Usuário ou senha inválidos.</p>
+                    </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['nao_autenticado']);
+
+                    ?>
+                    <div class="box">
+                        <form action="login.php" method="POST">
+                            <div class="field">
+                                <div class="control">
+                                    <input name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <input name="senha" class="input is-large" type="password" placeholder="Sua senha">
+                                </div>
+                            </div>
+                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

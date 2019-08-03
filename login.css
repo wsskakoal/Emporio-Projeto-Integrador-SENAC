@@ -1,39 +1,19 @@
-body{
-    background-color: rgb(87, 113, 201);
+html,body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
 }
-
-.principal {
-    padding-top: 10%;
-    padding-left: 20%;
-    padding-right: 20%;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-    justify-content: center;
-    justify-self: center;
-    font-family:Helvetica, sans-serif;
+.hero.is-success {
+  background: url("http://vindevinho.com.br/wp-content/uploads/2017/03/DSC0614.jpg");
+  background-size: 100%;
 }
-
-.cadastro {
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-    justify-content: center;
-    justify-self: center;
+.hero .nav, .hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-
-.login {
-    
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-    justify-content: center;
-    justify-self: center;
-   
+input {
+  font-weight: 300;
+}
+p {
+  font-weight: 700;
 }

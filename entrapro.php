@@ -1,4 +1,6 @@
 <?php  
+session_start();
+
 $idproduto = $_POST['idproduto'];
 $quantidade = $_POST['quantidade'];
 $vunitario = $_POST['vunitario'];
@@ -11,9 +13,13 @@ $qtde2 = mysqli_num_rows ($query2);
 $dadoscastro = mysqli_fetch_array($query2);
 if($dadoscastro == NULL)
 echo 'ID do produto não existe';
-else
+else {
 $sql = "INSERT INTO estoque (id_produto, qtde, valor_unitario, dataentrada) VALUES ('$idproduto', '$quantidade', '$vunitario', '$data')";
-mysqli_query($conecta, $sql);;
+mysqli_query($conecta, $sql);
+$sql3 = "UPDATE produto SET saldo = saldo + $quantidade;";
+mysqli_query($conecta, $sql3);
+echo "<script>window.location='index.html';alert('O produto $idproduto, foi cadastrado com sucesso!');</script>";
+};
 /*
 //----------------------------------------------------------------
 $sql = "UPDATE INTO estoque (id_produto, qtde, valor_unitario) VALUES ('$id_produto', '$eminimo', '$emaximo')";
