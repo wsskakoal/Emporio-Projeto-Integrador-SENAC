@@ -19,20 +19,22 @@ include('verifica_login.php');
 /* Open the sidenav */
 /* Set the width of the side navigation to 250px */
 function openNav() {
-  document.getElementById("mySidenav").style.width = "30%";
+  document.getElementById("mySidenav").style.width = "100%";
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav").style.width = "0%";
 } 
 </script>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="cadcliente.php" class="dropdown-item"> Cadastro de clientes</a>
-  <a href="entraproduto.php" class="dropdown-item">Entrada de Produtos</a>
-  <a href="saiproduto.php" class="dropdown-item">Saída de produtos</a>
-  <a href="cadfornecedor.php" class="dropdown-item">Cadastro de fornecedores</a>
+  <a href="cadcliente.php" class="dropdown-item"> Cadastro de cliente</a>
+  <a href="cadproduto.php" class="dropdown-item">Cadastro de Produto</a>
+  <a href="entraproduto.php" class="dropdown-item">Entrada de Produto</a>
+  <a href="saiproduto.php" class="dropdown-item">Saída de produto</a>
+  <a href="cadfornecedor.php" class="dropdown-item">Cadastro de fornecedor</a>
+  <a href="cadastrousuario.php" class="dropdown-item">Cadastrar Adminstrador</a>
 </div>
 
 <!-- Use any element to open the sidenav -->
@@ -41,7 +43,7 @@ function closeNav() {
 <div class="center">
 <nav class="navbar navbar-dark bg-dark flex-fill justify-content-center">
 <a class="navbar-link disabled ">
-<img src="emporio.png" alt="logotipo" class="rounded-circle" width=15% height=15%>
+<img src="emporio.png" alt="logotipo" class="rounded-circle" width=20% height=15%>
 </a>
 
 <!--<a class="navbar-brand " href="painel.php">EMPÓRIO DO SEU JOÃO</a>   -->
@@ -51,10 +53,10 @@ function closeNav() {
 <nav class="navbar navbar-dark bg-dark">
 <nav class="navbar navbar-dark bg-dark ">
 <div class="dropdown">
-<button class="btn btn-secondary" onclick="openNav()" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<button class="btn btn-secondary" onclick="openNav()" type="button" >
       <span class="navbar-toggler-icon"></span>
 </button>         
-<button onclick="openNav()" class="btn btn-secondary" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<button onclick="openNav()" class="btn btn-secondary" type="button" id="dropdownMenu2" >
        
           <span onclick="openNav()">Realizar Cadastros</span>
           </button>
@@ -97,7 +99,7 @@ function closeNav() {
 
 </nav>
   
-  <img src="http://vindevinho.com.br/wp-content/uploads/2017/03/DSC0614.jpg" alt="some text" width=100% height=80%>
+  <img src="bg.png" alt="some text" width=100% height=70%>
   
 </body>
 </html>

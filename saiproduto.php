@@ -13,6 +13,16 @@ include('verifica_login.php');
     </head>
 
 <body>
+  
+<nav class="navbar navbar-dark bg-dark justify-content-center">
+<div class="topodapagina">
+
+    <a href="painel.php" class="btn btn-secondary">Voltar a Pagina Principal </a>
+    <a href="entraproduto.php" class="btn btn-secondary">Entrada de Produto</a>
+    <a href="saiproduto.php" class="btn btn-secondary">Saida de Produto</a>
+    <a href="cadproduto.php" class="btn btn-secondary">Cadastro de Produto</a>
+</div>
+</nav>
     <div class="principal">
       <form action="saipro.php" method="POST">
             <h1 class="border"> Saida de produtos </h1>

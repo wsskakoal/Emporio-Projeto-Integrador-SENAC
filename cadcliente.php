@@ -10,7 +10,7 @@ include('verifica_login.php');
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Cadastro De Clientes</title>
     <meta charset="utf-8">
-    <form action="cadastro.php" method="POST">
+    <form action="cadastroclient.php" method="POST">
         <script language="javascript" type="text/javascript">
           function validar() {
           var nome = cadclient.nome.value;
@@ -48,7 +48,7 @@ include('verifica_login.php');
             </div>
             <div class="form-group"> 
     
-              <label for="inputAddress2">CPNJ</label>
+              <label for="inputAddress2">CPF</label>
               <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="00.000.000/0001-00" required="true" >
             </div>
             <div class="form-row">

@@ -12,6 +12,8 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="mobile-detect.js"></script>
+
 </head>
 
 <body>
