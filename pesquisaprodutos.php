@@ -42,9 +42,10 @@ $qtde = mysqli_num_rows($query);
 <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Nome do Produto</th>
                 <th>Id</th>
+                <th>Nome do Produto</th>
                 <th>Status</th>
+                <th>Id do Fornecedor</th>
                 <th>Saldo</th>
 
 
@@ -56,10 +57,11 @@ $qtde = mysqli_num_rows($query);
             <?php
              while($linha = mysqli_fetch_array($query))
              {
-               echo '<tr> <th> '.$linha['descricao'] . '</th> ';
-               echo ' <th> '.$linha['id'] . '</th>';
+                echo '<tr>';
+                echo '<td>' .$linha['id'] . '</td>';
+                echo '<td>' .$linha['descricao'] . '</td>';
                echo '<th> '.$linha['statuspro'] . '</th> ';
-
+               echo '<th> '.$linha['idfornecedor'] . '</th> ';
                echo '<th> '.$linha['saldo'] . '</th> </tr>';
               
              }
@@ -68,10 +70,10 @@ $qtde = mysqli_num_rows($query);
         </tbody>
         <tfoot>
             <tr>
-                <th>Nome do Produto</th>
                 <th>Id</th>
+                <th>Nome do Produto</th>
                 <th>Status</th>
-
+                <th>Id do Fornecedor</th>
                 <th>Saldo</th>
 
             </tr>
