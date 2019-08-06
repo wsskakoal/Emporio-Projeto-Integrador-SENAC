@@ -32,6 +32,10 @@ include('verifica_login.php');
     <label for="exampleFormControlInput1">Nome do produto</label>
     <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required="true">
   </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">ID do fornecedor</label>
+    <input type="text" class="form-control" id="idfornecedor" name="idfornecedor" placeholder="ID do fornecedor" required="true">
+  </div>
             <!-- 
 
               <div class="form-group col-md-6">

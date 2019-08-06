@@ -72,14 +72,12 @@ function closeNav() {
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="listaclientes.php">Clientes</a>
+          <a class="nav-link" href="pesquisaclientes.php">Clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="listafornecedores.php">Fornecedores</a>
+          <a class="nav-link" href="pesquisafornecedores.php">Fornecedores</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="listaestoque.php">Estoque</a>
-        </li>
+
 
         <li class="nav-item">
           <a class="nav-link" href="pesquisaprodutos.php">Pesquisa de Produtos</a>
@@ -99,7 +97,7 @@ function closeNav() {
 
 </nav>
   
-  <img src="bg.png" alt="some text" width=100% height=70%>
+  <img src="bg2.jpg" alt="some text" width=100% height=70%>
   
 </body>
 </html>

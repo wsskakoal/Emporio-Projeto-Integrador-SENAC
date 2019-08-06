@@ -2,7 +2,7 @@
 session_start();
 
 $descricao = $_POST['nome'];
-$eminimo = $_POST['eminimo'];
+$idfornecedor = $_POST['idfornecedor'];
 $emaximo = $_POST['emaximo'];
  
 
@@ -27,12 +27,13 @@ $qtde = mysqli_num_rows ($query);
 $dadoscastro = mysqli_fetch_array($query);
 // Condição para verificar se a variável $dadosLogin está nulo
 if($dadoscastro == 0){
-    $sql2 = "INSERT INTO produto (descricao) VALUES ('$descricao')";
+    $sql2 = "INSERT INTO produto (descricao, idfornecedor) VALUES ('$descricao', '$idfornecedor')";
     mysqli_query($conecta, $sql2);
+    echo "<script>window.location='cadproduto.php';alert('Produto $descricao cadastrado com sucesso.');</script>";
     }
     else
     {
-    echo 'Produto já existente';
+    echo "<script>window.location='cadproduto.php';alert('Produto $descricao já existe.');</script>";
     }
 
 

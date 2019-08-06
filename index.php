@@ -21,8 +21,8 @@ session_start();
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <h1 class="title has-text-grey">Sistema de Login</h1>
-                    <h3 class="title has-text-grey"><a href="https://animesonlinebr.site/" target="_blank">Empório do Seu João</a></h3>
+                    <h1 class="title has-text-primary">Sistema de Login</h1>
+                    <h3 class="title has-text-primary"><a href="https://animesonlinebr.site/" target="_blank">Empório do Seu João</a></h3>
                     <?php
                         if(isset($_SESSION['nao_autenticado'])):
                     ?>
